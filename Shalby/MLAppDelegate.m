@@ -7,12 +7,13 @@
 //
 
 #import "MLAppDelegate.h"
+#import "MLBatteryInfo.h"
 
 @implementation MLAppDelegate
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    NSLog(@"Battery charge : %f%%",[MLBatteryInfo currentCharge] * 100);
 }
+
+
 
 @end
