@@ -7,12 +7,14 @@
 //
 
 #import "MLAppDelegate.h"
-#import "MLBatteryInfo.h"
+#import "MLBatteryMonitor.h"
 
-@implementation MLAppDelegate
+@implementation MLAppDelegate {
+    MLBatteryMonitor *info;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSLog(@"Battery charge : %f%%",[MLBatteryInfo currentCharge] * 100);
+    info = [[MLBatteryMonitor alloc] init];
 }
 
 
