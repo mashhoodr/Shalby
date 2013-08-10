@@ -10,8 +10,21 @@
 #import "MLBatteryInfo.h"
 
 @implementation MLAppDelegate
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"Battery charge : %f%%",[MLBatteryInfo currentCharge] * 100);
+}
+
+
+// So the settings window shows when the app icon is clicked again
+-(BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+    [self.window makeKeyAndOrderFront:self];
+    return NO;
+}
+
+-(BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender {
+    [self.window makeKeyAndOrderFront:self];
+    return NO;
 }
 
 
