@@ -8,6 +8,8 @@
 
 #import "MLSettingsViewController.h"
 #import "MLAppDelegate.h"
+#import "MLConstants.h"
+
 @interface MLSettingsViewController ()
 
 @end
@@ -24,7 +26,7 @@
     return self;
 }
 
-- (IBAction)exit:(NSButton *)sender {
+-(IBAction)exit:(NSButton *)sender {
     [[NSApplication sharedApplication] terminate:self];
 }
 
@@ -38,15 +40,21 @@
     int value = [field intValue];
     if(value == 0) [field setStringValue:@"0"];
     
-    if(field.tag == FieldTagInterval) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    if(field.tag == FieldTagInterval) {
+        if(value > 999) [field setStringValue:@"999"];
+        [defaults setInteger:[field integerValue] forKey:keyInterval];
     }
     else if (field.tag == FieldTagLowerLevel) {
         if(value > 99) [field setStringValue:@"99"];
+        [defaults setInteger:[field integerValue] forKey:keyLowerBound];
     }
     else if(field.tag == FieldTagUpperLevel) {
         if(value > 99) [field setStringValue:@"99"];
+        [defaults setInteger:[field integerValue] forKey:keyUpperBound];
     }
 }
+
 
 @end

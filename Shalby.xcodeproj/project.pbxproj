@@ -23,6 +23,7 @@
 		41BC37B217B653E2000CF7CB /* MLBatteryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBatteryInfo.m; sourceTree = "<group>"; };
 		41BC37B417B65B4B000CF7CB /* MLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSettingsViewController.h; sourceTree = "<group>"; };
 		41BC37B517B65B4B000CF7CB /* MLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSettingsViewController.m; sourceTree = "<group>"; };
+		41BC37B717B665DC000CF7CB /* MLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLConstants.h; sourceTree = "<group>"; };
 		41C0D92C17B64B04004BEACC /* Shalby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shalby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C0D92F17B64B04004BEACC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		41C0D93217B64B04004BEACC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +102,7 @@
 				41BC37B217B653E2000CF7CB /* MLBatteryInfo.m */,
 				41BC37B417B65B4B000CF7CB /* MLSettingsViewController.h */,
 				41BC37B517B65B4B000CF7CB /* MLSettingsViewController.m */,
+				41BC37B717B665DC000CF7CB /* MLConstants.h */,
 			);
 			path = Shalby;
 			sourceTree = "<group>";
