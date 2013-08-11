@@ -14,15 +14,16 @@
 
 @end
 
-@implementation MLSettingsViewController
+@implementation MLSettingsViewController {
+    NSUserDefaults *defaults;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        defaults = [NSUserDefaults standardUserDefaults];
     }
-    
     return self;
 }
 
@@ -35,25 +36,21 @@
     [delegate.window close];
 }
 
+-(IBAction)setUpperBoundValue:(NSSlider *)sender {
+    [self.upperBoundText setStringValue:[NSString stringWithFormat:@"Set upper level at %d%%",sender.intValue]];
+    [defaults setInteger:[sender integerValue] forKey:keyUpperBound];
+}
+
+-(IBAction)setLowerBoundValue:(NSSlider *)sender {
+    [self.lowerBoundText setStringValue:[NSString stringWithFormat:@"Set upper level at %d%%",sender.intValue]];
+    [defaults setInteger:[sender integerValue] forKey:keyLowerBound];
+}
+
 -(void)controlTextDidChange:(NSNotification *)obj {
     NSTextField *field = [obj object];
     int value = [field intValue];
     if(value == 0) [field setStringValue:@"0"];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    if(field.tag == FieldTagInterval) {
-        if(value > 999) [field setStringValue:@"999"];
-        [defaults setInteger:[field integerValue] forKey:keyInterval];
-    }
-    else if (field.tag == FieldTagLowerLevel) {
-        if(value > 99) [field setStringValue:@"99"];
-        [defaults setInteger:[field integerValue] forKey:keyLowerBound];
-    }
-    else if(field.tag == FieldTagUpperLevel) {
-        if(value > 99) [field setStringValue:@"99"];
-        [defaults setInteger:[field integerValue] forKey:keyUpperBound];
-    }
+    [defaults setInteger:[field integerValue] forKey:keyInterval];
 }
 
 

@@ -10,18 +10,13 @@
 
 @interface MLSettingsViewController : NSViewController <NSTextFieldDelegate>
 
-enum FieldTag {
-    FieldTagInterval,
-    FieldTagUpperLevel,
-    FieldTagLowerLevel
-};
-
-
 @property (weak) IBOutlet NSTextField *interval;
-@property (weak) IBOutlet NSTextField *upperLevel;
-@property (weak) IBOutlet NSTextField *lowerLevel;
+@property (weak) IBOutlet NSTextField *upperBoundText;
+@property (weak) IBOutlet NSTextField *lowerBoundText;
 
 
+-(IBAction)setUpperBoundValue:(NSSlider *)sender;
+-(IBAction)setLowerBoundValue:(NSSlider *)sender;
 -(IBAction)exit:(NSButton *)sender;
 -(IBAction)closeSettings:(NSButton *)sender;
 
