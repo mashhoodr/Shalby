@@ -22,7 +22,7 @@
     defaults = [NSUserDefaults standardUserDefaults];
     self.monitor = [[MLBatteryMonitor alloc] init];
     // set view from saved values
-    [self.interval setIntegerValue:self.monitor.interval];
+    [self.intervalSlider setIntegerValue:self.monitor.interval];
     [self.upperBoundSlider setIntegerValue:self.monitor.upperBound];
     [self.lowerBoundSlider setIntegerValue:self.monitor.lowerBound];
     [self setUpperBoundValue:self.upperBoundSlider];
@@ -56,12 +56,11 @@
     self.monitor.lowerBound = [sender integerValue];
 }
 
--(void)controlTextDidChange:(NSNotification *)obj {
-    NSTextField *field = [obj object];
-    int value = [field intValue];
-    if(value == 0) [field setStringValue:@"1"];
-    [defaults setInteger:[field integerValue] forKey:keyInterval];
-    self.monitor.interval = [field integerValue];
+-(IBAction)setIntervalValue:(NSSlider *)sender {
+    NSInteger value = [sender integerValue];
+    [self.intervalText setStringValue:[NSString stringWithFormat:@"Check battery status every %ld mins", value]];
+    [defaults setInteger:value forKey:keyInterval];
+    self.monitor.interval = value;
     [self.monitor reset];
 }
 
