@@ -29,18 +29,23 @@
 }
 
 
--(void)check:(NSTimer *)sender {
-    NSLog(@"checking");
-    float charge = [MLBatteryInfo currentCharge] * 100;
+-(void)sendNotificationWithTitle:(NSString *)title {
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.subtitle = title;
+    notification.actionButtonTitle = @"Dismiss";
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
 
-    NSLog(@"%ld - %ld",[self upperBound], [self lowerBound]);
-    if(charge > [self upperBound])
-        NSLog(@"Please disconnect.");
-    else if(charge < [self lowerBound])
-        NSLog(@"Please reconnect.");
-    else
-        NSLog(@"No action required.");
+-(void)check:(NSTimer *)sender {
     
+    float charge = [MLBatteryInfo currentCharge] * 100;
+    if(charge > [self upperBound]) {
+        [self sendNotificationWithTitle:@"Please disconnect your charger."];
+    }
+    else if(charge < [self lowerBound]) {
+        [self sendNotificationWithTitle:@"Please reconnect your charger."];
+    }
+
 }
 
 -(void)reset {
