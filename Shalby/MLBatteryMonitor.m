@@ -37,7 +37,6 @@
 }
 
 -(void)check:(NSTimer *)sender {
-    
     float charge = [MLBatteryInfo currentCharge] * 100;
     BOOL isCharging = [MLBatteryInfo isCharging];
     
