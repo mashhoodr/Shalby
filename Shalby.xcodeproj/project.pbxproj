@@ -10,6 +10,7 @@
 		41BC37B317B653E2000CF7CB /* MLBatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC37B217B653E2000CF7CB /* MLBatteryInfo.m */; };
 		41BC37B617B65B4B000CF7CB /* MLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC37B517B65B4B000CF7CB /* MLSettingsViewController.m */; };
 		41BC37BC17B6665B000CF7CB /* MLBatteryMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC37BB17B6665B000CF7CB /* MLBatteryMonitor.m */; };
+		41BC37BF17B77CF6000CF7CB /* Shalby.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 41BC37BE17B77CF6000CF7CB /* Shalby.iconset */; };
 		41C0D93017B64B04004BEACC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C0D92F17B64B04004BEACC /* Cocoa.framework */; };
 		41C0D93A17B64B04004BEACC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41C0D93817B64B04004BEACC /* InfoPlist.strings */; };
 		41C0D93C17B64B04004BEACC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C0D93B17B64B04004BEACC /* main.m */; };
@@ -27,6 +28,7 @@
 		41BC37B717B665DC000CF7CB /* MLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLConstants.h; sourceTree = "<group>"; };
 		41BC37BA17B6665B000CF7CB /* MLBatteryMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBatteryMonitor.h; sourceTree = "<group>"; };
 		41BC37BB17B6665B000CF7CB /* MLBatteryMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBatteryMonitor.m; sourceTree = "<group>"; };
+		41BC37BE17B77CF6000CF7CB /* Shalby.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Shalby.iconset; sourceTree = "<group>"; };
 		41C0D92C17B64B04004BEACC /* Shalby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shalby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C0D92F17B64B04004BEACC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		41C0D93217B64B04004BEACC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -123,6 +125,7 @@
 		41C0D93617B64B04004BEACC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41BC37BE17B77CF6000CF7CB /* Shalby.iconset */,
 				41C0D93717B64B04004BEACC /* Shalby-Info.plist */,
 				41C0D93817B64B04004BEACC /* InfoPlist.strings */,
 				41C0D93B17B64B04004BEACC /* main.m */,
@@ -187,6 +190,7 @@
 				41C0D93A17B64B04004BEACC /* InfoPlist.strings in Resources */,
 				41C0D94017B64B04004BEACC /* Credits.rtf in Resources */,
 				41C0D94617B64B04004BEACC /* MainMenu.xib in Resources */,
+				41BC37BF17B77CF6000CF7CB /* Shalby.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
