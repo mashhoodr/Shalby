@@ -32,7 +32,6 @@
 -(void)sendNotificationWithTitle:(NSString *)title {
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = title;
-    notification.actionButtonTitle = @"Dismiss";
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
