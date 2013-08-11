@@ -56,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41BC37BD17B74D24000CF7CB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				41C0D94C17B64DFA004BEACC /* NSString+Contains.h */,
+				41C0D94D17B64DFA004BEACC /* NSString+Contains.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		41C0D92317B64B04004BEACC = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +104,11 @@
 		41C0D93517B64B04004BEACC /* Shalby */ = {
 			isa = PBXGroup;
 			children = (
+				41BC37BD17B74D24000CF7CB /* Categories */,
+				41C0D93617B64B04004BEACC /* Supporting Files */,
 				41C0D94117B64B04004BEACC /* MLAppDelegate.h */,
 				41C0D94217B64B04004BEACC /* MLAppDelegate.m */,
 				41C0D94417B64B04004BEACC /* MainMenu.xib */,
-				41C0D93617B64B04004BEACC /* Supporting Files */,
-				41C0D94C17B64DFA004BEACC /* NSString+Contains.h */,
-				41C0D94D17B64DFA004BEACC /* NSString+Contains.m */,
 				41BC37B117B653E2000CF7CB /* MLBatteryInfo.h */,
 				41BC37B217B653E2000CF7CB /* MLBatteryInfo.m */,
 				41BC37B417B65B4B000CF7CB /* MLSettingsViewController.h */,

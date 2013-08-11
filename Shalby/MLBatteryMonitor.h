@@ -10,4 +10,8 @@
 
 @interface MLBatteryMonitor : NSObject
 
+@property (assign) NSInteger upperBound, lowerBound, interval;
+
+-(void)reset;
+
 @end

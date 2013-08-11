@@ -7,8 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MLBatteryMonitor.h"
 
 @interface MLSettingsViewController : NSViewController <NSTextFieldDelegate>
+
+
+@property (nonatomic, strong) MLBatteryMonitor *monitor;
 
 @property (weak) IBOutlet NSTextField *interval;
 @property (weak) IBOutlet NSTextField *upperBoundText;

@@ -14,7 +14,7 @@
 #define keyUpperBound @"defaultsUpperBound"
 #define keyLowerBound @"defaultsLowerBound"
 
-#define defaultInterval 12
+#define defaultInterval 1
 #define defaultUpperBound 80
 #define defaultLowerBound 40
 

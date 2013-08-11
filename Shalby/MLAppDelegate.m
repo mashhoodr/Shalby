@@ -7,16 +7,11 @@
 //
 
 #import "MLAppDelegate.h"
-#import "MLBatteryMonitor.h"
 
-@implementation MLAppDelegate {
-    MLBatteryMonitor *info;
-}
+@implementation MLAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    info = [[MLBatteryMonitor alloc] init];
 }
-
 
 // So the settings window shows when the app icon is clicked again
 -(BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
