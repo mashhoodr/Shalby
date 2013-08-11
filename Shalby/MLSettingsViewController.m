@@ -21,6 +21,12 @@
 -(void)awakeFromNib {
     defaults = [NSUserDefaults standardUserDefaults];
     self.monitor = [[MLBatteryMonitor alloc] init];
+    [self.interval setIntegerValue:self.monitor.interval];
+    [self.upperBoundSlider setIntegerValue:self.monitor.upperBound];
+    [self.lowerBoundSlider setIntegerValue:self.monitor.lowerBound];
+    [self setUpperBoundValue:self.upperBoundSlider];
+    [self setLowerBoundValue:self.lowerBoundSlider];
+    
 }
 
 #pragma mark - IBActions

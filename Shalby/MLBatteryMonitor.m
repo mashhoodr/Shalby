@@ -20,8 +20,7 @@
     self = [super init];
     if (self) {
         defaults = [NSUserDefaults standardUserDefaults];
-        NSLog(@"%ld",[self valueForKey:keyInterval orDefault:defaultInterval] * 5);
-        self.interval   = [self valueForKey:keyInterval orDefault:defaultInterval] * 5;
+        self.interval   = [self valueForKey:keyInterval orDefault:defaultInterval];
         self.upperBound = [self valueForKey:keyUpperBound orDefault:defaultUpperBound];
         self.lowerBound = [self valueForKey:keyLowerBound orDefault:defaultLowerBound];
         [self reset];
@@ -49,7 +48,7 @@
         [timer invalidate];
         timer = nil;
     }
-    timer = [NSTimer timerWithTimeInterval:[self interval] target:self selector:@selector(check:) userInfo:nil repeats:YES];
+    timer = [NSTimer timerWithTimeInterval:([self interval] * 60) target:self selector:@selector(check:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 

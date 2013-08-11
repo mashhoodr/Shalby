@@ -13,6 +13,8 @@
 
 
 @property (nonatomic, strong) MLBatteryMonitor *monitor;
+@property (weak) IBOutlet NSSlider *upperBoundSlider;
+@property (weak) IBOutlet NSSlider *lowerBoundSlider;
 
 @property (weak) IBOutlet NSTextField *interval;
 @property (weak) IBOutlet NSTextField *upperBoundText;
