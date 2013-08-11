@@ -31,7 +31,7 @@
 
 -(void)sendNotificationWithTitle:(NSString *)title {
     NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.subtitle = title;
+    notification.title = title;
     notification.actionButtonTitle = @"Dismiss";
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
@@ -39,11 +39,13 @@
 -(void)check:(NSTimer *)sender {
     
     float charge = [MLBatteryInfo currentCharge] * 100;
-    if(charge > [self upperBound]) {
-        [self sendNotificationWithTitle:@"Please disconnect your charger."];
+    BOOL isCharging = [MLBatteryInfo isCharging];
+    
+    if(charge > [self upperBound] && isCharging) {
+        [self sendNotificationWithTitle:@"Disconnect Charger."];
     }
-    else if(charge < [self lowerBound]) {
-        [self sendNotificationWithTitle:@"Please reconnect your charger."];
+    else if(charge < [self lowerBound] && !isCharging) {
+        [self sendNotificationWithTitle:@"Reconnect Charger."];
     }
 
 }

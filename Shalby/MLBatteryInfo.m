@@ -28,11 +28,23 @@
     return 1;
 }
 
++(BOOL)isCharging {
+    NSString *chargingInfo = [self fetchChargingInformation];
+    if([chargingInfo contains:@"Yes"])
+        return YES;
+    
+    return NO;
+}
+
 +(float)currentCharge {
     return [self currentCapacity] / [self maxCapacity];
 }
 
 #pragma mark - Private Methods
+
++(NSString *)fetchChargingInformation {
+    return [self runBashScript:@"ioreg -wO -l | grep IsCharging"];
+}
 
 +(NSString *)fetchBatteryInformation {
     return [self runBashScript:@"ioreg -wO -l | grep Capacity"];

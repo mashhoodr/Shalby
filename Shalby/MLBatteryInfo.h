@@ -10,10 +10,10 @@
 
 @interface MLBatteryInfo : NSObject
 
-+ (float)currentCapacity;
-+ (float)maxCapacity;
-+ (float)currentCharge;
-
++(float)currentCapacity;
++(float)maxCapacity;
++(float)currentCharge;
++(BOOL)isCharging;
 
 
 @end
