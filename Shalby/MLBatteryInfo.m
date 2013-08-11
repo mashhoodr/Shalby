@@ -58,6 +58,15 @@
 
 @implementation MLBatteryInfo
 
++(int)cycleCount {
+    NSString *batteryInfo = [self fetchBatteryInformation];
+    if([batteryInfo contains:@"Cycle Count"])
+        return [[self captureStringUsing:@"(?<=Cycle Count\" = )[0-9]+"
+                                  inText:batteryInfo] intValue];
+    return 0;
+}
+
+
 +(float)currentCapacity {
     NSString *batteryInfo = [self fetchBatteryInformation];
     if([batteryInfo contains:@"CurrentCapacity"])

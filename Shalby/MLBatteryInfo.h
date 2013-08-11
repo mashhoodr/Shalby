@@ -10,6 +10,7 @@
 
 @interface MLBatteryInfo : NSObject
 
++(int)cycleCount;
 +(float)currentCapacity;
 +(float)maxCapacity;
 +(float)currentCharge;
